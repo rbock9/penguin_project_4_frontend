@@ -1,7 +1,9 @@
 // Import Our Components
+import Header from "./components/Header";
 import AllPosts from "./pages/AllPosts"
 import SinglePost from "./pages/SinglePost";
 import Form from "./pages/Form";
+import Footer from "./components/Footer"
 
 // Import Hooks from React
 import {useState, useEffect} from "react"
@@ -20,9 +22,10 @@ function App(props) {
   }
 
   const button = {
-    backgroundColor: "navy",
+    // backgroundColor: "navy",
     display: "block",
     margin: "auto",
+    
   };
 
   ///////////////
@@ -117,7 +120,8 @@ function App(props) {
   //////////////////////////
   return (
     <div className="App">
-      <h1 style={h1}>My Food Blog List</h1>
+      <Header />
+      {/* <h1 style={h1}>What Did I Eat?</h1> */}
       <Link to="/new"><button style={button}>Create New Post</button></Link>
       <Routes>
         <Route path="/" element={<AllPosts posts={posts}/>}/>
@@ -132,17 +136,18 @@ function App(props) {
           <Form
             initialBlog={nullBlog}
             handleSubmit={addBlogs}
-            buttonLabel="Create Blog"
+            buttonLabel="Create Blog Post"
           />
         }/>
         <Route path="/edit" element={
           <Form
             initialBlog={targetBlog}
             handleSubmit={updateBlog}
-            buttonLabel="Update Blog"
+            buttonLabel="Update This Post"
           /> 
         }/>
       </Routes>
+      <Footer />
     </div>
   );
 }

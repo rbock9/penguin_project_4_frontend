@@ -7,7 +7,7 @@ const Post = ({ post }) => {
   ///////////////////////////
   const div = {
     textAlign: "center",
-    border: "3px solid",
+    border: "3px solid lightgray",
     margin: "10px auto",
     width: "80%",
   };
@@ -17,11 +17,11 @@ const Post = ({ post }) => {
       <Link to={`/post/${post.id}`}>
         <h1>{post.mealname}</h1>
       </Link>
-      <h2>{post.image}</h2>
-      <h2>{post.rating}</h2>
-      <h2>{post.restname}</h2>
-      <h2>{post.restaddress}</h2>
-      <h2>{post.summary}</h2>
+      <img   src={post.image} alt={post.mealname} />
+      {/* <h3>Rating: {post.rating}</h3> */}
+      <h3>From {post.restname}</h3>
+      {/* <h3>Restaurant Address: {post.restaddress}</h3> */}
+      {/* <h3>Summary: {post.summary}</h3> */}
     </div>
   );
 };

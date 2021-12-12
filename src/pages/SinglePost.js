@@ -13,26 +13,52 @@ const SinglePost = ({posts, edit, deleteBlog}) => {
     ////////////////////
     // Style Object
     /////////////////////
-    const div = {
+    const card = {
         textAlign: "center",
-        border: "3px solid",
+        border: "3px solid lightgray",
         width: "80%",
         margin: "30px auto"
     }
 
-    return <div style={div}>
-        <h1>{post?.mealname}</h1>
-        <h2>{post?.image}</h2>
-        <h2>{post?.rating}</h2>
-        <h2>{post?.restname}</h2>
-        <h2>{post?.restaddress}</h2>
-        <h2>{post?.summary}</h2>
-        <button onClick={(event) => edit(post)}>Edit</button>
-        <button onClick={(event) => deleteBlog(post)}>Delete</button>
-        <Link to="/">
-            <button>Go Back</button>
-        </Link>
-    </div>
+    const cardTop = {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        margin: "5px"
+    }
+
+    const cardBody = {
+        textAlign: "left",
+        margin: "10px"
+    }
+
+    const cardImage = {
+        width: "50%"
+    }
+
+    const button = {
+        margin: "10px"
+    }
+
+    return <div style={card}>
+                <div style={cardTop}>
+                    <h1>{post?.mealname}</h1>
+                    <img style={cardImage}  src={post?.image} alt={post?.mealname} />
+                </div>
+                <div style={cardBody}>
+                    
+                    <h3>Restaurant: {post?.restname}</h3>
+                    <h3>Restaurant Address: {post?.restaddress}</h3>
+                    <h3>Summary: {post?.summary}</h3>
+                    <h3>Rating: {post?.rating}</h3>
+                </div>
+                <button style={button} onClick={(event) => edit(post)}>Edit</button>
+                <button style={button} onClick={(event) => deleteBlog(post)}>Delete</button>
+                <Link to="/">
+                    <button style={button}>Go Back</button>
+                </Link>
+            </div>
 }
 
 export default SinglePost;

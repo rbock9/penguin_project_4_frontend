@@ -1,7 +1,12 @@
 import {useState} from "react";
-import {useNavigate} from "react-router-dom"
+import {useNavigate, Link} from "react-router-dom"
 
 const Form = ({initialBlog, handleSubmit, buttonLabel}) => {
+
+    const form ={
+        margin: "10px auto",
+        width: "80%",
+    }
 
     const navigate = useNavigate()
 
@@ -32,14 +37,17 @@ const Form = ({initialBlog, handleSubmit, buttonLabel}) => {
 
     // Our form, with inputs for fields and a submit button
     return (
-        <form onSubmit={handleSubmisson}>
+        <form style={form} onSubmit={handleSubmisson}>
+        <fieldset>
+        <label for="mealnameField">Meal Name:</label>
           <input
             type="text"
             onChange={handleChange}
             value={formData.mealname}
             name="mealname"
-            placeholder="mealname"
+            placeholder="name of the meal"
           />
+        <label for="imageield">Image URL:</label>
           <input
             type="text"
             onChange={handleChange}
@@ -47,6 +55,7 @@ const Form = ({initialBlog, handleSubmit, buttonLabel}) => {
             name="image"
             placeholder="image url"
           />
+        <label for="ratingField">Rating:</label>
           <input
             type="text"
             onChange={handleChange}
@@ -54,6 +63,7 @@ const Form = ({initialBlog, handleSubmit, buttonLabel}) => {
             name="rating"
             placeholder="your rating"
           />
+        <label for="restnameField">Restaurant Name:</label>
           <input
             type="text"
             onChange={handleChange}
@@ -61,6 +71,7 @@ const Form = ({initialBlog, handleSubmit, buttonLabel}) => {
             name="restname"
             placeholder="restaurant name"
           />
+        <label for="restaddressField">Restaurant Address:</label>
           <input
             type="text"
             onChange={handleChange}
@@ -68,6 +79,7 @@ const Form = ({initialBlog, handleSubmit, buttonLabel}) => {
             name="restaddress"
             placeholder="restaurant address"
           />
+        <label for="summaryField">Summary:</label>
           <input
             type="text"
             onChange={handleChange}
@@ -76,6 +88,10 @@ const Form = ({initialBlog, handleSubmit, buttonLabel}) => {
             placeholder="a summary of your thoughts about the meal"
           />
           <input type="submit" value={buttonLabel} />
+          </fieldset>
+          <Link to="/">
+            <button >Go Back</button>
+          </Link>
         </form>
       );
   };
