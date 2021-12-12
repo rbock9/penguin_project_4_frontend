@@ -8,8 +8,9 @@ const Post = ({ post }) => {
   const div = {
     textAlign: "center",
     border: "3px solid lightgray",
+    borderRadius: "12px",
     margin: "10px auto",
-    width: "80%",
+    width: "75%",
   };
 
   return (

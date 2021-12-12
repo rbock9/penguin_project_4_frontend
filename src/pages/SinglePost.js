@@ -16,6 +16,7 @@ const SinglePost = ({posts, edit, deleteBlog}) => {
     const card = {
         textAlign: "center",
         border: "3px solid lightgray",
+        borderRadius: "12px",
         width: "80%",
         margin: "30px auto"
     }
@@ -34,7 +35,7 @@ const SinglePost = ({posts, edit, deleteBlog}) => {
     }
 
     const cardImage = {
-        width: "50%"
+        width: "33%"
     }
 
     const button = {
