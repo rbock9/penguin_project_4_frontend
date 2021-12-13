@@ -42,7 +42,6 @@
 
     <main>
       <Header />
-      {/* <h1 style={h1}>What Did I Eat?</h1> */}
       <Link to="/new"><button style={button}>Create New Post</button></Link>
       <Routes>
         <Route path="/" element={<AllPosts posts={posts}/>}/>
