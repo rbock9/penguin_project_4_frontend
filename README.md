@@ -9,11 +9,6 @@
 - Users can create, update, and delete posts via a form.
 - Users can click the blog title in the header to go back to the home page.
 
-- Originally Planned Features (postponed due to lack of time):
- - The user will be able to create an account using a username and password
- - The user will be able to sign in via Auth0
- - The user will be able to use a hamburger menu to see all posts
-
 ## List of Components
 
 - Header
